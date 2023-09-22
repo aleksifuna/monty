@@ -6,15 +6,15 @@
  */
 int check_funct(char ch)
 {
-	int i;
-	char *initials = "p";
+	int f1;
 
-	i = 0;
-	while (initials[i] != '\0')
-	{
-		if (initials[i] == ch)
-			return (0);
-		i++;
-	}
+	f1 = 0;
+
+	if (ch > 64 && ch < 91)
+		f1 = 1;
+	else if (ch > 96 && ch < 123)
+		f1 = 1;
+	if (f1 == 1)
+		return (0);
 	return (1);
 }

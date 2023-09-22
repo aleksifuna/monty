@@ -11,7 +11,7 @@ int char_check(char ch)
 	flag1 = flag2 = 1;
 	if (ch > 47 && ch < 58)
 		flag1 = 0;
-	if (ch == ' ')
+	if (ch == ' ' || ch == '-')
 		flag2 = 0;
 	if (flag1 == 1 && flag2 == 1)
 		return (0);

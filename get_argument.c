@@ -27,7 +27,6 @@ int get_argument(char *str, int *idx)
 		arg[j] = str[*idx];
 		(*idx)++;
 	}
-	arg[len] = '\0';
 	argument = atoi(arg);
 	free(arg);
 	return (argument);

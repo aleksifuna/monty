@@ -37,12 +37,15 @@ typedef struct instruction_s
 
 void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
-void (*get_op(char *str, int *id))(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void (*get_op(char *str))(stack_t **stack, unsigned int line_number);
 int compare(char *str1, char *str2);
 char *get_opcode(char *str, int *idx);
 int get_argument(char *str, int *idx);
 void run_ops(char *str, stack_t **head, int *ln_number);
 int check_funct(char ch);
 int char_check(char ch);
+int int_check(char ch);
 void free_list(stack_t **head);
+void handle_error(int id, char *str);
 #endif /* MONTY_H */

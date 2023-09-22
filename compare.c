@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdio.h>
 /**
  * compare - compares two string
  * @str1: first string

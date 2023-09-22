@@ -5,11 +5,13 @@
  *
  * Return: pointer to function
  */
-void (*get_op(char *str, int *id))(stack_t **stack, unsigned int line_number)
+void (*get_op(char *str))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t funct[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{NULL, NULL},
 	};
 	int i;
 
@@ -17,10 +19,7 @@ void (*get_op(char *str, int *id))(stack_t **stack, unsigned int line_number)
 	while (funct[i].opcode)
 	{
 		if (compare(funct[i].opcode, str) == 0)
-		{
-			*id = 5 - strlen(funct[i].opcode);
 			return (funct[i].f);
-		}
 		i++;
 	}
 	return (NULL);
