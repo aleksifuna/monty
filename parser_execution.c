@@ -3,6 +3,7 @@
  * run_ops - parses a string and runs opcodes
  * @str: commands
  * @head: pointer to head node of a linked list
+ * @ln_number: command line number
  */
 void run_ops(char *str, stack_t **head, int *ln_number)
 {
@@ -15,7 +16,7 @@ void run_ops(char *str, stack_t **head, int *ln_number)
 	{
 		if (char_check(str[i]) == 0 && flag == 1)
 		{
-			fprintf(stderr,"L%d: usage: push integer\n", *ln_number);
+			fprintf(stderr, "L%d: usage: push integer\n", *ln_number);
 			exit(EXIT_FAILURE);
 		}
 		else if (char_check(str[i]) == 0 && flag == 0)
@@ -23,9 +24,7 @@ void run_ops(char *str, stack_t **head, int *ln_number)
 			opcode = get_opcode(str, &i);
 			operation = get_op(opcode);
 			if (operation == NULL)
-			{
 				handle_error(*ln_number, opcode);
-			}
 			else
 			{
 				if (compare("push", opcode) == 0)
@@ -38,9 +37,9 @@ void run_ops(char *str, stack_t **head, int *ln_number)
 			}
 			free(opcode);
 		}
-		else if (int_check(str[i]) == 0 && flag == 1)
+		else if (isdigit(str[i]) && flag == 1)
 		{
-			globvar_value = get_argument(str, &i);
+			globvar_value = get_argument(str, &i, *ln_number);
 			operation(head, *ln_number);
 			flag = 0;
 			return;

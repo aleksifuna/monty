@@ -29,6 +29,8 @@ int main(int argc, char **argv)
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		line_number++;
+		if (line[0] == '#')
+			continue;
 		run_ops(line, &head, &line_number);
 	}
 	fclose(file);
