@@ -7,6 +7,7 @@
 void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
+
 	if (*stack == NULL || (*stack)->next == NULL)
 		op_error(line_number, "sub");
 	temp = (*stack)->next;

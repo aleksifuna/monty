@@ -7,11 +7,12 @@
 void mod(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
+
 	if (*stack == NULL || (*stack)->next == NULL)
 		op_error(line_number, "mod");
 	if ((*stack)->n == 0)
 	{
-		fprintf(stderr,"L%d: division by zero\n", line_number);
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stack)->next;
