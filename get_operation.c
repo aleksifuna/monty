@@ -19,6 +19,7 @@ void (*get_op(char *str))(stack_t **stack, unsigned int line_number)
 		{"div", divide},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL},
 	};
 	int i;
