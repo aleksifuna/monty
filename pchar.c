@@ -15,16 +15,12 @@ void pchar(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	while (current != NULL)
+	num = current->n;
+	if (num < 126 && num > -1)
+		printf("%c\n", num);
+	else
 	{
-		num = current->n;
-		if (num < 126 && num > -1)
-			printf("%c\n", num);
-		else
-		{
-			fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
-			exit(EXIT_FAILURE);
-		}
-		current = current->next;
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+		exit(EXIT_FAILURE);
 	}
 }
