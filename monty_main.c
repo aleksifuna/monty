@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 		line_number++;
 		if (is_blank(line))
 			continue;
-		if (line[0] == '#')
+		if (comment(line) == 0)
 			continue;
 		run_ops(line, &head, &line_number);
 	}
