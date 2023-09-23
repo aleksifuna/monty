@@ -58,4 +58,5 @@ int int_check(char ch);
 void free_list(stack_t **head);
 void handle_error(int id, char *str);
 void op_error(int ln, char *msg);
+int is_blank(const char *line);
 #endif /* MONTY_H */

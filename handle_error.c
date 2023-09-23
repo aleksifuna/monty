@@ -1,7 +1,7 @@
 #include "monty.h"
-/*
- * handle_error - handles long errors
- * @id: Line number
+/**
+ * handle_error - handles errors
+ * @id: line number
  * @str: command
  */
 void handle_error(int id, char *str)

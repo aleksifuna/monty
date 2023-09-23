@@ -23,12 +23,14 @@ int main(int argc, char **argv)
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
-		fprintf(stderr, "unable to open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		line_number++;
+		if (is_blank(line))
+			continue;
 		if (line[0] == '#')
 			continue;
 		run_ops(line, &head, &line_number);

@@ -38,8 +38,8 @@ void pall(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		fprintf(stderr, "L%d: Stack empty\n", line_number);
-		exit(EXIT_FAILURE);
+		line_number += 0;
+		return;
 	}
 	current = *stack;
 	while (current != NULL)

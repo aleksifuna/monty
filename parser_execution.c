@@ -32,6 +32,7 @@ void run_ops(char *str, stack_t **head, int *ln_number)
 				else
 				{
 					operation(head, *ln_number);
+					free(opcode);
 					return;
 				}
 			}

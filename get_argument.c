@@ -24,6 +24,11 @@ int get_argument(char *str, int *idx, int ln_no)
 		len++;
 		(*idx)++;
 	}
+	if (isalpha(str[*idx]))
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", ln_no);
+		exit(EXIT_FAILURE);
+	}
 	ln_no += 1;
 	arg = malloc(sizeof(char) * len + 1);
 	*idx = reset_index;
