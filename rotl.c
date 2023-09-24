@@ -8,6 +8,8 @@ void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top, *current;
 
+	if (*stack == NULL)
+		return;
 	top = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
